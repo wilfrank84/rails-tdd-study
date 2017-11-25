@@ -1,15 +1,26 @@
 require 'calculator'
 
-describe Calculator do
-  it 'user sum method with 2 numbers' do
-    calc = Calculator.new
-    result = calc.sum(5,5)
-    expect(result).to eq(10)
+describe Calculator, '- classe para calculos' do
+  context '#sum' do
+    it 'with positive numbers' do
+      result = subject.sum(5,5)
+      expect(result).to eq(10)
+    end
+
+    it 'with negative numbers' do
+      result = subject.sum(-5,-4)
+      expect(result).to eq(-9)
+    end    
   end
 
-  it 'user subtract method with 2 numbers' do
-    calc = Calculator.new
-    result = calc.subtraction(5,4)
-    expect(result).to eq(1)
+  context '#subtraction' do
+    it 'with positive numbers' do
+      result = subject.subtraction(10,5)
+      expect(result).to eq(5)
+    end
+    it 'with negative numbers' do
+      result = subject.subtraction(-10,-5)
+      expect(result).to eq(-5)
+    end
   end
 end
