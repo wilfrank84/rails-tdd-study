@@ -6,4 +6,8 @@ class Calculator
   def subtraction(n1,n2)
     n1 - n2
   end
+
+  def division(n1, n2)
+    n1 / n2
+  end
 end

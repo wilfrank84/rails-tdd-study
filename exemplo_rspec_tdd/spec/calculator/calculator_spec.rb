@@ -23,4 +23,13 @@ describe Calculator, '- classe para calculos' do
       expect(result).to eq(-5)
     end
   end
+
+  context '#division' do
+    it 'divided by 0' do
+      expect{subject.division(3,0)}.to raise_error(ZeroDivisionError)
+      expect{subject.division(3,0)}.to raise_error("divided by 0")
+      expect{subject.division(3,0)}.to raise_error(ZeroDivisionError, "divided by 0")
+      expect{subject.division(3,0)}.to raise_error(/divided/)
+    end
+  end
 end
